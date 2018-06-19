@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{E0C656A4-518D-47B6-904F-4A38B3193CD9}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+		.paket\paket.exe = .paket\paket.exe
+		paket.lock = paket.lock
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".FAKE", ".FAKE", "{0F2298B5-F0DA-423B-A320-D7EB9019C576}"
+	ProjectSection(SolutionItems) = preProject
+		build.fsx = build.fsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F15307F5-40A9-41B0-B837-8184A10D8015}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{BAD502E7-8EA5-42D0-A9F7-058F255F3D24}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MonoGame", "src\MonoGame\MonoGame.fsproj", "{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{67D013D7-6649-4F1E-B412-3C54025ACC64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "effects", "effects", "{CCBA0366-4BFF-4858-9F45-03AA90C4ED48}"
+	ProjectSection(SolutionItems) = preProject
+		content\effects\effects.fx = content\effects\effects.fx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fonts", "fonts", "{ADBCE724-BE59-4BF3-BB68-C9B33E6FC3C1}"
+	ProjectSection(SolutionItems) = preProject
+		content\fonts\Miramo.spritefont = content\fonts\Miramo.spritefont
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CCBA0366-4BFF-4858-9F45-03AA90C4ED48} = {67D013D7-6649-4F1E-B412-3C54025ACC64}
+		{ADBCE724-BE59-4BF3-BB68-C9B33E6FC3C1} = {67D013D7-6649-4F1E-B412-3C54025ACC64}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF1DE4E2-2042-4943-960A-5B93BB779FDA}
+	EndGlobalSection
+EndGlobal
