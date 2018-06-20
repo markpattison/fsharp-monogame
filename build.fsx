@@ -83,19 +83,17 @@ let MonoGameContent (setParams : MonoGameContentParams -> MonoGameContentParams)
     let tool = parameters.ToolPath
     let args = buildMonoGameContentArgs parameters content
     let result =
-        Fake.Core.Process.execWithResult (fun info ->
+        Fake.Core.Process.execSimple (fun info ->
         { info with
             FileName = tool
             WorkingDirectory = getWorkingDir parameters
             Arguments = args }) parameters.TimeOut
-    match result.OK with
-    | true -> ()
-    | false -> printf "MonoGame content building failed. Process finished with exit code %i." result.ExitCode
+    if result <> 0 then failwithf "MonoGame content building failed. Process finished with exit code %i." result
 
 // Directories
 
 let intermediateContentDir = "./intermediateContent/"
-let contentDir = "./src/Buildings/"
+let contentDir = "./src/MonoGame/"
 let buildDir  = "./build/"
 let deployDir = "./deploy/"
 
@@ -141,7 +139,7 @@ Target.create "RunApp" (fun _ ->
 open Fake.Core.TargetOperators
 
 "Clean"
-//    ==> "BuildContent"
+    ==> "BuildContent"
     ==> "BuildApp"
     ==> "RunApp"
 
