@@ -27,12 +27,14 @@ type Sample() as _this =
     let mutable widthOverHeight = 0.0f
     let mutable showParameters = false
 
+    let mutable (vertices: VertexPositionColor[]) = [| |]
+
     let ShowParameters() =
         spriteBatch.Begin()
 
-        let colour = Color.Gold
+        let colour = Color.DarkSlateGray
 
-        spriteBatch.DrawString(spriteFont, "Hello", new Vector2(0.0f, 0.0f), colour)
+        spriteBatch.DrawString(spriteFont, "fsharp-MonoGame", new Vector2(0.0f, 0.0f), colour)
 
         spriteBatch.End()
 
@@ -51,6 +53,13 @@ type Sample() as _this =
         //Mouse.SetPosition(_this.Window.ClientBounds.Width / 2, _this.Window.ClientBounds.Height / 2)
         originalMouseState <- Mouse.GetState()
         input <- Input(Keyboard.GetState(), Keyboard.GetState(), Mouse.GetState(), Mouse.GetState(), _this.Window, originalMouseState, 0, 0)
+
+        vertices <-
+            [|
+                new VertexPositionColor(new Vector3( 0.0f,  0.8f, 0.0f), Color.Red)
+                new VertexPositionColor(new Vector3( 0.8f, -0.8f, 0.0f), Color.Green)
+                new VertexPositionColor(new Vector3(-0.8f, -0.8f, 0.0f), Color.Blue)
+            |]
     
     override _this.Update(gameTime) =
         let time = float32 gameTime.TotalGameTime.TotalSeconds
@@ -65,15 +74,15 @@ type Sample() as _this =
     override _this.Draw(gameTime) =
         let time = (single gameTime.TotalGameTime.TotalMilliseconds) / 100.0f
 
-        do device.Clear(Color.CornflowerBlue)
+        do device.Clear(Color.LightGray)
 
-        //effect.CurrentTechnique <- effect.Techniques.[effectName]
+        effect.CurrentTechnique <- effect.Techniques.["Coloured"]
 
-        //effect.CurrentTechnique.Passes |> Seq.iter
-        //    (fun pass ->
-        //        pass.Apply()
-        //        device.DrawUserIndexedPrimitives(PrimitiveType.TriangleList, vertices, 0, vertices.Length, indices, 0, indices.Length / 3)
-        //    )
+        effect.CurrentTechnique.Passes |> Seq.iter
+            (fun pass ->
+                pass.Apply()
+                device.DrawUserPrimitives(PrimitiveType.TriangleList, vertices, 0, 1)
+            )
 
         if showParameters then ShowParameters()
 
