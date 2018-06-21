@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{BAD502E7-8
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MonoGame", "src\MonoGame\MonoGame.fsproj", "{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "fsharp-MonoGame", "src\fsharp-MonoGame\fsharp-MonoGame.fsproj", "{972C20A0-7B26-4BC3-9766-2E3D4A000B5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{67D013D7-6649-4F1E-B412-3C54025ACC64}"
 EndProject

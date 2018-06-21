@@ -12,7 +12,7 @@ open Fake.IO.Globbing.Operators
 // Directories
 
 let intermediateContentDir = "./intermediateContent/"
-let contentDir = "./src/MonoGame/"
+let contentDir = "./src/fsharp-MonoGame/"
 let buildDir  = "./build/"
 let deployDir = "./deploy/"
 
