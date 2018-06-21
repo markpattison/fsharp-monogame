@@ -15,8 +15,8 @@ type Sample() as _this =
 
     let graphics = new GraphicsDeviceManager(_this)
     do graphics.GraphicsProfile <- GraphicsProfile.HiDef
-    do graphics.PreferredBackBufferWidth <- 800
-    do graphics.PreferredBackBufferHeight <- 600
+    do graphics.PreferredBackBufferWidth <- 600
+    do graphics.PreferredBackBufferHeight <- 480
     do graphics.IsFullScreen <- false
     do graphics.ApplyChanges()
     do base.Content.RootDirectory <- "Content"
