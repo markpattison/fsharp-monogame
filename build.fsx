@@ -49,7 +49,7 @@ Target.create "BuildApp" (fun _ ->
 Target.create "RunApp" (fun _ ->
     Fake.Core.Process.fireAndForget (fun info ->
         { info with
-            FileName = buildDir + @"Buildings.exe"
+            FileName = buildDir + @"fsharp-MonoGame.exe"
             WorkingDirectory = buildDir })
     Fake.Core.Process.setKillCreatedProcesses false)
 

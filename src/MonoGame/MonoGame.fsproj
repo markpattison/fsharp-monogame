@@ -8,7 +8,7 @@
     <ProjectGuid>972c20a0-7b26-4bc3-9766-2e3d4a000b5c</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Buildings</RootNamespace>
-    <AssemblyName>Buildings</AssemblyName>
+    <AssemblyName>fsharp-MonoGame</AssemblyName>
     <UseStandardResourceNames>true</UseStandardResourceNames>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.3.0</TargetFSharpCoreVersion>

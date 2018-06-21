@@ -25,24 +25,7 @@ type Sample() as _this =
 
     let mutable effect = Unchecked.defaultof<Effect>
     let mutable widthOverHeight = 0.0f
-    let mutable zoom = 0.314f
-    let mutable offset = new Vector2(0.0f, 0.0f)
     let mutable showParameters = false
-
-    let getDirectionalInput keyPos keyNeg (input: Input) =
-        (if input.IsPressed keyPos then 1.0f else 0.0f) - (if input.IsPressed keyNeg then 1.0f else 0.0f)
-
-    let getLeftRight = getDirectionalInput Keys.Left Keys.Right
-    let getDownUp = getDirectionalInput Keys.Down Keys.Up
-    let getPageDownPageUp = getDirectionalInput Keys.PageDown Keys.PageUp
-
-    let getInput (input: Input) =
-        let scaled = if (input.IsPressed Keys.LeftShift || input.IsPressed Keys.RightShift) then 0.1f else 1.0f
-
-        let move = scaled * 0.005f * new Vector2(getLeftRight input, getDownUp input) / zoom
-        let zoomIn = 1.02f ** (scaled * getPageDownPageUp input)
-
-        (-move, zoomIn)
 
     let ShowParameters() =
         spriteBatch.Begin()
@@ -75,11 +58,6 @@ type Sample() as _this =
         if input.Quit then _this.Exit()
         if input.JustPressed(Keys.P) then showParameters <- not showParameters
 
-        let (move, zoomIn) = getInput input
-
-        offset <- offset + move
-        zoom <- zoom / zoomIn
-
         do base.Update(gameTime)
     
     override _this.Draw(gameTime) =
@@ -88,10 +66,6 @@ type Sample() as _this =
         do device.Clear(Color.CornflowerBlue)
 
         //effect.CurrentTechnique <- effect.Techniques.[effectName]
-        //effect.Parameters.["Zoom"].SetValue(zoom)
-        //effect.Parameters.["WidthOverHeight"].SetValue(widthOverHeight)
-        //effect.Parameters.["Offset"].SetValue(offset)
-        //effect.Parameters.["JuliaSeed"].SetValue(juliaSeed)
 
         //effect.CurrentTechnique.Passes |> Seq.iter
         //    (fun pass ->
