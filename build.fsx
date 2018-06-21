@@ -42,7 +42,7 @@ Target.create "BuildContent" (fun _ ->
 
 Target.create "BuildApp" (fun _ ->
     appReferences
-        |> Fake.DotNet.MSBuild.runRelease id buildDir "Build"
+        |> Fake.DotNet.MSBuild.runDebug id buildDir "Build"
         |> ignore
 )
 

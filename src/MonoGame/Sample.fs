@@ -55,6 +55,8 @@ type Sample() as _this =
     override _this.Update(gameTime) =
         let time = float32 gameTime.TotalGameTime.TotalSeconds
 
+        input <- input.Updated(Keyboard.GetState(), Mouse.GetState(), _this.Window)
+
         if input.Quit then _this.Exit()
         if input.JustPressed(Keys.P) then showParameters <- not showParameters
 
