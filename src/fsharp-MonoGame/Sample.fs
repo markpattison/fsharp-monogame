@@ -44,7 +44,7 @@ type Sample() as _this =
     
     override _this.LoadContent() =
         effect <- _this.Content.Load<Effect>("Effects/effects")
-        spriteFont <- _this.Content.Load<SpriteFont>("Fonts/Miramo")
+        spriteFont <- _this.Content.Load<SpriteFont>("Fonts/Arial")
 
         spriteBatch <- new SpriteBatch(device)
 

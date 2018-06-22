@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "effects", "effects", "{CCBA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fonts", "fonts", "{ADBCE724-BE59-4BF3-BB68-C9B33E6FC3C1}"
 	ProjectSection(SolutionItems) = preProject
-		content\fonts\Miramo.spritefont = content\fonts\Miramo.spritefont
+		content\fonts\Arial.spritefont = content\fonts\Arial.spritefont
 	EndProjectSection
 EndProject
 Global
