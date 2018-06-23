@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".FAKE", ".FAKE", "{0F2298B5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F15307F5-40A9-41B0-B837-8184A10D8015}"
 	ProjectSection(SolutionItems) = preProject
+		fsharp-MonoGame.png = fsharp-MonoGame.png
 		README.md = README.md
 	EndProjectSection
 EndProject
