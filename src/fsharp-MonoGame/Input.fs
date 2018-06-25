@@ -3,6 +3,8 @@
 open Microsoft.Xna.Framework
 open Microsoft.Xna.Framework.Input
 
+type ResetMouseEachFrame = | Reset | DoNotReset
+
 type Input(keyboardState: KeyboardState,
            oldKeyboardState : KeyboardState,
            mouseState: MouseState,
@@ -10,7 +12,8 @@ type Input(keyboardState: KeyboardState,
            gameWindow : GameWindow,
            originalMouseState: MouseState,
            oldMouseX,
-           oldMouseY) =
+           oldMouseY,
+           resetMouseEachFrame) =
 
     let justPressed key =
         keyboardState.IsKeyDown(key) && oldKeyboardState.IsKeyUp(key)
@@ -19,7 +22,9 @@ type Input(keyboardState: KeyboardState,
     let mouseDY = mouseState.Y - originalMouseState.Y
     let mouseX = oldMouseX + mouseDX
     let mouseY = oldMouseY + mouseDY
-    //do Mouse.SetPosition(gameWindow.ClientBounds.Width / 2, gameWindow.ClientBounds.Height / 2)
+
+    do if resetMouseEachFrame = Reset && not (obj.ReferenceEquals(gameWindow, null)) then
+        Mouse.SetPosition(gameWindow.ClientBounds.Width / 2, gameWindow.ClientBounds.Height / 2)
 
     member _this.Quit = justPressed(Keys.Escape)
     member _this.MouseX = mouseX
@@ -34,4 +39,4 @@ type Input(keyboardState: KeyboardState,
     member _this.Fire = (mouseState.LeftButton = ButtonState.Pressed) && (oldMouseState.LeftButton = ButtonState.Released)
 
     member _this.Updated(keyboard: KeyboardState, mouse: MouseState, window : GameWindow) =
-        Input(keyboard, keyboardState, mouse, mouseState, window, originalMouseState, mouseX, mouseY)
+        Input(keyboard, keyboardState, mouse, mouseState, window, originalMouseState, mouseX, mouseY, resetMouseEachFrame)
