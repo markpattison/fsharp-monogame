@@ -28,10 +28,12 @@ let contentFiles =
 
 // Targets
 
+Target.description "Cleaning directories"
 Target.create "Clean" (fun _ -> 
     Fake.IO.Shell.cleanDirs [buildDir; deployDir]
 )
 
+Target.description "Building MonoGame content"
 Target.create "BuildContent" (fun _ ->
     contentFiles
         |> MonoGameContent.buildMonoGameContent (fun p ->
@@ -40,12 +42,14 @@ Target.create "BuildContent" (fun _ ->
                 IntermediateDir = intermediateContentDir;
             }))
 
+Target.description "Building application"
 Target.create "BuildApp" (fun _ ->
     appReferences
         |> Fake.DotNet.MSBuild.runDebug id buildDir "Build"
         |> ignore
 )
 
+Target.description "Running application"
 Target.create "RunApp" (fun _ ->
     Fake.Core.Process.fireAndForget (fun info ->
         { info with
