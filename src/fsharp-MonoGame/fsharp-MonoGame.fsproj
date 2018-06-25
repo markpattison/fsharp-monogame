@@ -71,8 +71,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Compile Include="Input.fs" />
-    <Compile Include="GameContent.fs" />
-    <Compile Include="GameState.fs" />
     <Compile Include="Sample.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
