@@ -15,4 +15,4 @@ A sample solution using MonoGame with F#, incorporating Paket and FAKE 5.
 3. Build and run using `fake build -t RunApp`.
 4. You should see the triangle below.
 
-![fsharp-MonoGame](https://raw.githubusercontent.com/markpattison/fsharp-monogame/master/fsharp-MonoGame.png)
+![fsharp-MonoGame](fsharp-MonoGame.png "fsharp-MonoGame")
