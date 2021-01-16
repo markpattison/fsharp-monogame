@@ -1,3 +1,7 @@
+# THIS REPO IS OBSOLETE
+
+Please see [monogame-fsharp](https://github.com/markpattison/monogame-fsharp) for an updated sample using MonoGame 3.8 and .NET Core 3.1.
+
 # fsharp-monogame
 
 A sample solution using MonoGame with F#, incorporating Paket and FAKE 5.
